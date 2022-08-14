@@ -1,0 +1,79 @@
+p {
+    margin: 0;
+}
+
+ul,li {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-form {
+    width: 500px;
+    min-height: 200px;
+    padding: 40px;
+    margin: 0 auto;
+    box-shadow: 0 10px 10px 0 #cccccc;
+}
+
+.contact-form-input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border: 1px solid #303030; 
+}
+
+.contact-form-fieldset {
+    margin-bottom: 20px;
+}
+
+.contact-form-message {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    margin-bottom: 20px;
+    resize: none;
+}
+/*Этот класс создан, чтобы выровнять кнопки по центру формы*/
+.contact-form-btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/*Класс чтобы описать внешний вид наших кнопок*/
+.contact-form-btn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    padding: 10px 6px;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.contact-form-btn:not(:last-child) {
+    margin-right: 10px;
+}
+
+/* два класса на кнопках, чтобы покрасить их в разные цвета*/
+
+.contact-form-btn-submit {
+    background-color: #3498db;
+}
+
+.contact-form-btn-reset {
+    background-color: #e74c3c;
+}
+
+.contact-form-fieldset {
+    margin-bottom: 20px;
+}
+
+/* Стили для <textarea> чтобы задать ей размеры отступы и поля*/
+.contact-form-messege {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    margin-bottom: 20px;
+    resize: none;
+}

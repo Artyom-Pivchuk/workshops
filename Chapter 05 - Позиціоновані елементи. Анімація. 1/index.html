@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title lang="en">Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+        integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+<!--Создал несколько див-блоков wrapper, чтобы отдельно рассмотреть
+в каждом отдельные свойства позиционирования. Див-блок between нужен для того,
+чтобы визуально отделить блоки между собой, и картинка стала более наглядной для понимания
+По умолчанию у всех элементов свойство position: static;-->    
+    <div class="between"></div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="box red">1</div>
+            <div class="box blue">2</div>
+            <div class="box yellow">3</div>
+        </div>
+    </div>
+    <div class="between"></div>
+<!--Разберём первое значение свойства position: relative; Зададим это свойство нашему синему контейнеру с номером 2
+для этого назначим ему дополнительный класс для стилей var1-->    
+    <div class="wrapper">
+        <div class="container">
+            <div class="box red">1</div>
+            <div class="box blue var1">2</div>
+            <div class="box yellow">3</div>
+        </div>
+    </div>
+    <div class="between"></div>
+<!--Разберём второе значение свойства position: absolute; Зададим это свойство нашему синему контейнеру с номером 2
+для этого назначим ему дополнительный класс для стилей var2-->
+<div class="wrapper">
+    <div class="container">
+        <div class="box red">1</div>
+        <div class="box blue var2">2</div>
+        <div class="box yellow">3</div>
+    </div>
+</div>
+<div class="between"></div>
+<!--Рассморим приём как отцентрировать элемент строго по центру его родителя. Для этого элементу задаём всё тот же position: absolute;
+Затем задаём ему смещение вверх top: 50%; влево left: 50%; Затем задаём свойство translate(-50%, -50%); тоесть смещаем блок наполовину его ширины влево и
+половину его высоты вверх. Так мы его чётко отцентрируем по центру его родителя-->
+<div class="wrapper">
+    <div class="container">
+        <div class="box red">1</div>
+        <div class="box blue var3">2</div>
+        <div class="box yellow">3</div>
+    </div>
+</div>
+<div class="between"></div>
+<!--Не рекомендуется вынимать все элементы из родителя сразу, поскольку контейнер не будет никого "ощущать" в себе и просто схлопнется. 
+Прийдётся задавать ему фиксированную высоту. А это делать крайне не рекомендуется. Рассмотрим такой пример только для того, чтобы понять как
+работает свойство <z-index>-->
+    <div class="wrapper">
+        <div class="container container-var4">
+            <div class="box red red-var4">1</div>
+            <div class="box blue blue-var4">2</div>
+            <div class="box yellow yellow-var4">3</div>
+        </div>
+    </div>
+    <div class="between"></div>
+<!--В этом примере мы "вытянули" всех детей блока .container из потока и для того, чтобы он не "схлопнулся" задали ему
+через дополнительный класс .container-var4 фиксированную высоту 300 пикселей. В результате все три блока извлечены из потока страницы.
+Они размещены один поверх другого. По умолчанию очередность в расположении элементов такая же как в html-коде - сначала расположен красный блок,
+поверх него следует синий блок, и последним следует желтый блок. При помощи свойства z-index мы можем влиять на этот порядок наложения 
+элементов по оси z. Нужно лишь задать каждому элементу свойство z-index. Задаётся значение этого свойства любым целым числом. Можно положительным
+или отрицательным. У кого значение будет больше, тот будет располагаться выше, и соответственно у кого меньше - тот будет располоагаться ниже. -->
+<div class="wrapper">
+    <div class="container container">
+        <div class="box red">1</div>
+        <div class="box blue">2</div>
+        <div class="box yellow yellow-var5">3</div>
+    </div>
+</div>
+<div class="between"></div>
+<!--Далее расмотрим свойство position: fixed; Элемент с этим значением свойства также вынимается из потока как и при position: absolute;
+По умолчанию стоит в том же месте, где стоял в потоке. К элементу с этим свойством так же применимы свойства для смещения и позиционирования
+top, right, bottom, left Позиционируется такой элемент от вьюпорта браузера - это видимая часть нашего браузера-->
+</body>
+</html>
